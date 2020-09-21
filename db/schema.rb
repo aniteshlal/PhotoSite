@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_053343) do
+ActiveRecord::Schema.define(version: 2020_09_21_015422) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "user_id"
+    t.string "photo_id"
+    t.datetime "date_time"
+    t.text "comment_text"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "user_id"
+    t.datetime "date_time"
+    t.string "file_name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
