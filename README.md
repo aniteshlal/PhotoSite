@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Intro and Purpose](#1-intro-and-purpose)
 	  - [How to create and Configure EC2 instance](#create-ec2)
-	  - [Create a Docker Container](#create-docker-container)
+	  - [Create a Docker Image locally and push it to Docker Hub Repo](#create-docker-container)
 2. [Demonstration of Application working](#2-demonstration-of-application-working)
 3. [Things that are not working](#3-things-that-are-not-working)
 4. [YouTube walkthrough](#4-youtube-walkthrough)
@@ -28,7 +28,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 
 <a name = "create-docker-container" /> <br>
 
-**Create a Docker Container** <br>
+**Create a Docker Image locally and push it to Docker Hub Repo** <br>
 
 1. Create a **Dockerfile** with the following: <br>
 	```
@@ -47,7 +47,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	EXPOSE 3000
 	CMD ["rails", "server", "-b", "0.0.0.0"]
 	```
-You can find out more information on how to setup a Dockerfile from [here](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).<br>
+	You can find out more information on how to setup a Dockerfile from [here](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).<br>
 
 2. Now build our image by doing the following command in our terminal<br>
 	```
@@ -60,8 +60,19 @@ You can find out more information on how to setup a Dockerfile from [here](https
 	docker run -p 3000:3000 aws-photesite-app
 	```
 	The command above will create a docker container using the "aws-photesite-app" image you created in Step #2. The "-d" flag tells docker daemon to run this container in "daemon mode". <br>
-	You can go to to the [Official Docker Documentation](https://docs.docker.com/engine/reference/commandline/docker/) to find out all the commands docker allows.
-
+	You can go to to the [Official Docker Documentation](https://docs.docker.com/engine/reference/commandline/docker/) to find out all the commands docker allows.<br>
+4. Publishing the Docker Image <br>
+	We run the following in the command line<br>
+	```
+	docker login
+	```
+	This will prompt you to enter your Docker Hub username and then password so that you. <br>
+	Next we push our Docker image to the registy with the following<br>
+	```
+	docker push aws-photesite-app
+	``
+	Now this image is avaiable via the internet so we will be able to pull it on our EC2 instance.<br>
+	
 ## 2. Demonstration of Application working
 
 ## 3. Things that are not working
