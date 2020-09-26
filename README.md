@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Intro and Purpose](#1-intro-and-purpose)
 	  - [How to create and Configure EC2 instance](#create-ec2)
+	  - [Create a Docker Container](#create-docker-container)
 2. [Demonstration of Application working](#2-demonstration-of-application-working)
 3. [Things that are not working](#3-things-that-are-not-working)
 4. [YouTube walkthrough](#4-youtube-walkthrough)
@@ -25,7 +26,41 @@ There are 2 URI the website has. One is the **user/index** which lists all the u
 **How to create and Configure EC2 instance** <br>
 Here is the [link][youtube link to create and configure EC2] for my youtube video going through the setup <br>
 
+<a name = "create-docker-container" /> <br>
 
+**Create a Docker Container** <br>
+
+1. Create a **Dockerfile** with the following: <br>
+	```
+	FROM ruby:2.6.6
+
+	WORKDIR /usr/src/app
+	COPY Gemfile* ./
+	RUN bundle install
+	COPY . .
+
+	RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+	RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+	RUN apt-get update -qq && apt-get install -y yarn
+	RUN yarn install
+
+	EXPOSE 3000
+	CMD ["rails", "server", "-b", "0.0.0.0"]
+	```
+You can find out more information on how to setup a Dockerfile from [here](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).<br>
+
+2. Now build our image by doing the following command in our terminal<br>
+	```
+	docker build -t aws-photesite-app .
+	```
+	This creates a local docker image called "aws-photesite-app"<br>
+
+3. Launch a container from the newly built image by doing the following in the terminal<br>
+	```
+	docker run -p 3000:3000 aws-photesite-app
+	```
+	The command above will create a docker container using the "aws-photesite-app" image you created in Step #2. The "-d" flag tells docker daemon to run this container in "daemon mode". <br>
+	You can go to to the [Official Docker Documentation](https://docs.docker.com/engine/reference/commandline/docker/) to find out all the commands docker allows.
 
 ## 2. Demonstration of Application working
 
