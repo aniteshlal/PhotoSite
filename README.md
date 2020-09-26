@@ -81,14 +81,14 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	1. Login in to you AWS account and nativate to the EC2 Dashboard that looks like this.<br>
 		![EC2-Dashboard](readmePics/EC2-Dashboard.JPG) <br>
 		Then click on the Launch Instance
-	2. Select an AMI. I choose the following
+	2. Select an AMI. I choose the following <br>
 		![AMI](readmePics/AMI.JPG) <br>
-	3. Next we choose the Instance type
+	3. Next we choose the Instance type <br>
 		![Instance Type](readmePics/instance-type.JPG) <br>
-	4. Set the Security group
+	4. Set the Security group <br>
 		![Security Groups](readmePics/security-group.JPG) <br>
 		I have these ports open in the inbound section because my app will run on port 3000 so we need anyone to have access to it
-	5. Then after clicking on 'Review And Launch'. Create a new key pair.
+	5. Then after clicking on 'Review And Launch'. Create a new key pair. <br>
 		![Key pair](readmePics/keypair.JPG)
 		This gives you a private key that you will use to access this instance.
 2. **Connect to the EC2 Instance** <br>
@@ -146,15 +146,15 @@ This section is very short because everything is working which is a good thing!!
 [Link to my youtube tutorial](https://youtu.be/PBpXgQWBLyA)
 ## 5. Adv - What happens when an instance stops running?! What shall I do?
 When an instance stops, you lose your environment and data so you have to do all the steps to setup your instances again.<br>
-To prevent re-setup for our environment and data. We can create our own AMI.
+To prevent re-setup for our environment and data. We can create our own AMI.<br>
 ![create image](readmePics/create-image.JPG) <br>
 We select the instance that we want to create an image of. <br>
 Then we click on the 'Action' dropdown and select 'Image' option and then click on 'Create image'<br>
 It will bring us to a page where you name your image and then finish creating your image. It may take a few minutes for your image to be created.<br>
-To access your image, you Click on the AMI under the Images menu as shown by the following picture
+To access your image, you Click on the AMI under the Images menu as shown by the following picture <br>
 ![access image](readmePics/access-image.JPG)<br>
 You should arrive to a page that lists all the images that you have created.<br>
-To create an instance with a image, you just select the image and click on 'Launch'
+To create an instance with a image, you just select the image and click on 'Launch'<br>
 ![launch image](readmePics/launch-image.JPG)<br>
 Then you will have to configure the instance as I have explain how to do previously.<br>
 After a few minutes the instance the instance is created. So now we should be able access this instance through SSH terminal.<br>
