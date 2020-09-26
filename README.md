@@ -51,15 +51,15 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 
 2. Now build our image by doing the following command in our terminal<br>
 	```
-	docker build -t aws-photesite-app .
+	docker build -t anitesh93/photosite-app .
 	```
-	This creates a local docker image called "aws-photesite-app"<br>
+	This creates a local docker image called "anitesh93/photosite-app"<br>
 
 3. Launch a container from the newly built image by doing the following in the terminal<br>
 	```
-	docker run -p 3000:3000 aws-photesite-app
+	docker run -p 3000:3000 anitesh93/photosite-app
 	```
-	The command above will create a docker container using the "aws-photesite-app" image you created in Step #2. The "-d" flag tells docker daemon to run this container in "daemon mode". <br>
+	The command above will create a docker container using the "anitesh93/photosite-app" image you created in Step #2. The "-d" flag tells docker daemon to run this container in "daemon mode". <br>
 	You can go to to the [Official Docker Documentation](https://docs.docker.com/engine/reference/commandline/docker/) to find out all the commands docker allows.<br>
 4. Publishing the Docker Image <br>
 	We run the following in the command line<br>
@@ -69,14 +69,14 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	This will prompt you to enter your Docker Hub username and then password so that you. <br>
 	Next we push our Docker image to the registy with the following<br>
 	```
-	docker push aws-photesite-app
+	docker push anitesh93/photosite-app
 	```
 	Now this image is avaiable via the internet so we will be able to pull it on our EC2 instance.<br>
 	[Here](https://reflectoring.io/aws-deploy-docker-image-via-web-console/) is the tutorial that i followed to make the Dockerfile and publish it<br>
 
 
 ## 2. Demonstration of Application working
-1. Set up Amazon EC2 <br>
+1. **Set up Amazon EC2** <br>
 	You have to have an AWS account to do the following steps.
 	1. Login in to you AWS account and nativate to the EC2 Dashboard that looks like this.<br>
 		\<put image here\> <br>
@@ -91,7 +91,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	5. Then after clicking on 'Review And Launch'. Create a new key pair.
 		\<image of the keypair\>
 		This gives you a private key that you will use to access this instance.
-2. Connect to the EC2 Instance
+2. **Connect to the EC2 Instance** <br>
 	(image of the instance to connect)
 	1. Click on the 'Instance' on the left
 	2. Click on your Instance you want to connect to
@@ -103,7 +103,42 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	```
 	Once we have successfully connected. This is how it looks <br>
 	(image of connected ec2)
+	<br>
+3. **Installing Docker on EC2 Instance** <br>
+	1.Update the installed packages and package cache on your instance
+	```
+	sudo yum update -y
+	```
+	2. Install the most recent Docker Community Edition package for Amazon Linux 2
+	```
+	sudo amazon-linux-extras install docker
+	```
+	3. Start the Docker service.
+	```
+	sudo service docker start
+	```
+	4. Add the ec2-user to the docker group so you can execute Docker commands without using sudo.
+	```
+	sudo usermod -a -G docker ec2-user
+	```
+	5. Log out and log back in again to pick up the new docker group permissions. You can accomplish this by closing your current SSH terminal window and reconnecting to your instance in a new one. Your new SSH session will have the appropriate docker group permissions.
 
+4. **Pulling my Custom Docker Image and creating a container**
+	1. Use the following command to pull this image onto the EC2 instance
+	```
+	docker pull anitesh93/photosite-app
+	```
+	2. Now we can use the following command to 
+	```
+	docker run -p 3000:3000 anitesh93/photosite-app:latest
+	```
+	We now should be able to access our Photosite with our instance Public IPv4 address with the port 3000 ex. http://54.185.32.54:3000 <br>
+	3. To see that our container is running
+	```
+	docker ps -all
+	```
+	We should see all the containers that are running currently
+	
 ## 3. Things that are not working
 
 ## 4. YouTube walkthrough
