@@ -70,8 +70,9 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	Next we push our Docker image to the registy with the following<br>
 	```
 	docker push aws-photesite-app
-	``
+	```
 	Now this image is avaiable via the internet so we will be able to pull it on our EC2 instance.<br>
+	[Here](https://reflectoring.io/aws-deploy-docker-image-via-web-console/) is the tutorial that i followed to make the Dockerfile and publish it
 	
 ## 2. Demonstration of Application working
 
