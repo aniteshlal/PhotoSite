@@ -7,7 +7,7 @@
 2. [Demonstration of Application working](#2-demonstration-of-application-working)
 3. [Things that are not working](#3-things-that-are-not-working)
 4. [YouTube walkthrough](#4-youtube-walkthrough)
-5. [Adv - What happens when an instance stops running?! What can I do?](#5-Adv---What-happens-when-an-instance-stops-running?!-What-can-I-do?)
+5. [Adv - Why my stuffs disappeared after I stopped my EC2?! What shall I do?](#5-adv---why-my-stuffs-disappeared-after-i-stopped-my-ec2-what-shall-i-do)
 6. [Adv - How to get access to my website despite the IP address of EC2 changes?](#6-adv---how-to-get-access-to-my-website-despite-the-ip-address-of-ec2-changes)
 
 <br>
@@ -137,33 +137,33 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	```
 	docker ps -all
 	```
-	We should see all the containers that are running currently
+	We should see all the containers that are running currently<br>
 	
 ## 3. Things that are not working
-	This section is very short because everything is working which is a good thing!!!
+This section is very short because everything is working which is a good thing!!!
 
 ## 4. YouTube walkthrough
-
-## 5. Adv - What happens when an instance stops running?! What can I do?
-	When an instance stops, you lose your environment and data so you have to do all the steps to setup your instances again.<br>
-	To prevent re-setup for our environment and data. We can create our own AMI.<br>
-	(image of create-image)
-	We select the instance that we want to create an image of. <br>
-	Then we click on the 'Action' dropdown and select 'Image' option and then click on 'Create image'<br>
-	It will bring us to a page where you name your image and then finish creating your image. It may take a few minutes for your image to be created.<br>
-	<br>
-	To access your image, you Click on the AMI under the Images menu as shown by the following picture<br>
-	(access-image)<br>
-	You should arrive to a page that lists all the images that you have created.<br>
-	To create an instance with a image, you just select the image and click on 'Launch'<br>
-	(launch image)<br>
-	Then you will have to configure the instance as I have explain how to do previously.<br>
-	After a few minutes the instance the instance is created. So now we should be able access this instance through SSH terminal.<br>
-	Once you login, you can see that your environment and files are still there so you don't have to re-download things.<br>
-	You can run the Docker Container for the Photosite, without downloading and setting it up on the instances and access the app through the new instances' public IPv4 at port 3000<br>
+[Link to my youtube tutorial](https://youtu.be/PBpXgQWBLyA)
+## 5. Adv - Why my stuffs disappeared after I stopped my EC2?! What shall I do?
+When an instance stops, you lose your environment and data so you have to do all the steps to setup your instances again.<br>
+To prevent re-setup for our environment and data. We can create our own AMI.<br>
+(image of create-image)<br>
+We select the instance that we want to create an image of. <br>
+Then we click on the 'Action' dropdown and select 'Image' option and then click on 'Create image'<br>
+It will bring us to a page where you name your image and then finish creating your image. It may take a few minutes for your image to be created.<br>
+<br>
+To access your image, you Click on the AMI under the Images menu as shown by the following picture<br>
+(access-image)<br>
+You should arrive to a page that lists all the images that you have created.<br>
+To create an instance with a image, you just select the image and click on 'Launch'<br>
+(launch image)<br>
+Then you will have to configure the instance as I have explain how to do previously.<br>
+After a few minutes the instance the instance is created. So now we should be able access this instance through SSH terminal.<br>
+Once you login, you can see that your environment and files are still there so you don't have to re-download things.<br>
+You can run the Docker Container for the Photosite, without downloading and setting it up on the instances and access the app through the new instances' public IPv4 at port 3000<br>
 	
 
 ## 6. Adv - How to get access to my website despite the IP address of EC2 changes?
 
 
-[youtube link to create and configure EC2]: https://www.youtube.com
+[youtube link to create and configure EC2]: https://youtu.be/PBpXgQWBLyA
