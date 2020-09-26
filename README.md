@@ -16,13 +16,15 @@
 This is a Ruby on Rails (RoR) application that is a very simple photo website that utilizes the Sqlite3 database. The database as has 3 tables, one for Users, Photos, and Comments. The relationship between these tables are the following:<br>
   * A User can have many photos and many Comments
   * A Photo belongs to one User and has many Comments
-  * A Comment belongs to one User and one Photo
-<br>
-There are 2 URI the website has. One is the __user/index__ which lists all the users in the database. The other one is the __photo/index/:id__ where id parameter is the User Id and it displays all the all Photos associated with that User Id and under each photo, it displays all the comments for that photo with the corresponding author of the comment.
-<br>
-<a name = "create-ec2" />
-**[How to create and Configure EC2 instance]** <br>
-Here is the [link][youtube link to create and configure EC2] for my youtube video going through the setup 
+  * A Comment belongs to one User and one Photo<br>
+
+There are 2 URI the website has. One is the **user/index** which lists all the users in the database. The other one is the **photo/index/:id** where id parameter is the User Id and it displays all the all Photos associated with that User Id and under each photo, it displays all the comments for that photo with the corresponding author of the comment.<br>
+
+<a name = "create-ec2" /> <br>
+
+**How to create and Configure EC2 instance** <br>
+Here is the [link][youtube link to create and configure EC2] for my youtube video going through the setup <br>
+
 
 
 ## 2. Demonstration of Application working
