@@ -140,6 +140,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	We should see all the containers that are running currently
 	
 ## 3. Things that are not working
+	This section is very short because everything is working which is a good thing!!!
 
 ## 4. YouTube walkthrough
 
