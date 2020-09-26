@@ -132,8 +132,8 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	```
 	docker run -p 3000:3000 anitesh93/photosite-app:latest
 	```
-	We now should be able to access our Photosite with our instance Public IPv4 address with the port 3000 ex. http://54.185.32.54:3000 <br>
-	3. To see that our container is running
+	We now should be able to access our Photosite with our instance Public IPv4 address with the port 3000 <br> ex. [http://54.185.32.54:3000](http://54.185.32.54:3000) <br>
+	iii. To see that our container is running
 	```
 	docker ps -all
 	```
