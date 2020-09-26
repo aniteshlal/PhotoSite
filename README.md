@@ -72,9 +72,37 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	docker push aws-photesite-app
 	```
 	Now this image is avaiable via the internet so we will be able to pull it on our EC2 instance.<br>
-	[Here](https://reflectoring.io/aws-deploy-docker-image-via-web-console/) is the tutorial that i followed to make the Dockerfile and publish it
-	
+	[Here](https://reflectoring.io/aws-deploy-docker-image-via-web-console/) is the tutorial that i followed to make the Dockerfile and publish it<br>
+
+
 ## 2. Demonstration of Application working
+1. Set up Amazon EC2 <br>
+	You have to have an AWS account to do the following steps.
+	1. Login in to you AWS account and nativate to the EC2 Dashboard that looks like this.<br>
+		\<put image here\> <br>
+		Then click on the Launch Instance
+	2. Select an AMI. I choose the following
+		\<image of the AMI\> <br>
+	3. Next we choose the Intance type
+		\<image of t2.micro\> <br>
+	4. Set the Security group
+		\<Image of security groups\> <br>
+		I have these ports open in the inbound section because my app will run on port 3000 so we need anyone to have access to it
+	5. Then after clicking on 'Review And Launch'. Create a new key pair.
+		\<image of the keypair\>
+		This gives you a private key that you will use to access this instance.
+2. Connect to the EC2 Instance
+	(image of the instance to connect)
+	1. Click on the 'Instance' on the left
+	2. Click on your Instance you want to connect to
+	3. Click on Connect which brings us to following
+	(image of ssh)
+	In our command line, we would have to go to the directory that has our key pair file and then run this command <br>
+	```
+	ssh -i "awsR1.pem" ec2-user@ec2-54-185-32-54.us-west-2.compute.amazonaws.com
+	```
+	Once we have successfully connected. This is how it looks <br>
+	(image of connected ec2)
 
 ## 3. Things that are not working
 
