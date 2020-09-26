@@ -7,7 +7,7 @@
 2. [Demonstration of Application working](#2-demonstration-of-application-working)
 3. [Things that are not working](#3-things-that-are-not-working)
 4. [YouTube walkthrough](#4-youtube-walkthrough)
-5. [Adv - Why my stuffs disappeared after I stopped my EC2?! What shall I do?](#5-adv---why-my-stuffs-disappeared-after-i-stopped-my-ec2-what-shall-i-do)
+5. [Adv - What happens when an instance stops running?! What shall I do?](#5-adv---what-happens-when-an-instance-stops-running-what-shall-i-do)
 6. [Adv - How to get access to my website despite the IP address of EC2 changes?](#6-adv---how-to-get-access-to-my-website-despite-the-ip-address-of-ec2-changes)
 
 <br>
@@ -144,7 +144,7 @@ This section is very short because everything is working which is a good thing!!
 
 ## 4. YouTube walkthrough
 [Link to my youtube tutorial](https://youtu.be/PBpXgQWBLyA)
-## 5. Adv - Why my stuffs disappeared after I stopped my EC2?! What shall I do?
+## 5. Adv - What happens when an instance stops running?! What shall I do?
 When an instance stops, you lose your environment and data so you have to do all the steps to setup your instances again.<br>
 To prevent re-setup for our environment and data. We can create our own AMI.<br>
 (image of create-image)<br>
