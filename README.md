@@ -84,7 +84,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 	2. Select an AMI. I choose the following
 		![AMI](readmePics/AMI.JPG) <br>
 	3. Next we choose the Instance type
-		![Instance Type](readmePics/instance type.JPG) <br>
+		![Instance Type](readmePics/instance-type.JPG) <br>
 	4. Set the Security group
 		![Security Groups](readmePics/security-group.JPG) <br>
 		I have these ports open in the inbound section because my app will run on port 3000 so we need anyone to have access to it
@@ -92,17 +92,17 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 		![Key pair](readmePics/keypair.JPG)
 		This gives you a private key that you will use to access this instance.
 2. **Connect to the EC2 Instance** <br>
-	![connecting to the instance](readmePics/connecting to instance.JPG)
+	![connecting to the instance](readmePics/connecting-to-instance.JPG)
 	1. Click on the 'Instance' on the left
 	2. Click on your Instance you want to connect to
 	3. Click on Connect which brings us to following
-	![ssh](readmePics/ssh.JPG)
+	![ssh](readmePics/SSH.JPG)
 	In our command line, we would have to go to the directory that has our key pair file and then run this command <br>
 	```
 	ssh -i "awsR1.pem" ec2-user@ec2-54-185-32-54.us-west-2.compute.amazonaws.com
 	```
 	Once we have successfully connected. This is how it looks <br>
-	![ssh success](readmePics/ssh successfully on cmd.JPG)
+	![ssh success](readmePics/ssh-successfully-on-cmd.JPG)
 	<br>
 3. **Installing Docker on EC2 Instance** <br>
 	1.Update the installed packages and package cache on your instance
@@ -146,17 +146,16 @@ This section is very short because everything is working which is a good thing!!
 [Link to my youtube tutorial](https://youtu.be/PBpXgQWBLyA)
 ## 5. Adv - What happens when an instance stops running?! What shall I do?
 When an instance stops, you lose your environment and data so you have to do all the steps to setup your instances again.<br>
-To prevent re-setup for our environment and data. We can create our own AMI.<br>
-![create image](readmePics/create-image.JPG)<br>
+To prevent re-setup for our environment and data. We can create our own AMI.
+![create image](readmePics/create-image.JPG) <br>
 We select the instance that we want to create an image of. <br>
 Then we click on the 'Action' dropdown and select 'Image' option and then click on 'Create image'<br>
 It will bring us to a page where you name your image and then finish creating your image. It may take a few minutes for your image to be created.<br>
-<br>
-To access your image, you Click on the AMI under the Images menu as shown by the following picture<br>
-![access image](readmePics/access image.JPG)<br>
+To access your image, you Click on the AMI under the Images menu as shown by the following picture
+![access image](readmePics/access-image.JPG)<br>
 You should arrive to a page that lists all the images that you have created.<br>
-To create an instance with a image, you just select the image and click on 'Launch'<br>
-![launch image](readmePics/launch image.JPG)<br>
+To create an instance with a image, you just select the image and click on 'Launch'
+![launch image](readmePics/launch-image.JPG)<br>
 Then you will have to configure the instance as I have explain how to do previously.<br>
 After a few minutes the instance the instance is created. So now we should be able access this instance through SSH terminal.<br>
 Once you login, you can see that your environment and files are still there so you don't have to re-download things.<br>
@@ -166,13 +165,13 @@ You can run the Docker Container for the Photosite, without downloading and sett
 ## 6. Adv - What happens when you reboot an instance?? What can be done??
 The IP address changes so we have to find the new public IPv4 to access our app. How to get access to my website despite the IP address of EC2 changes?<br>
 **Use [Elastic IP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)** <br>
-	1. Click on the 'Elastic IP' under 'Network & Security' tab on the left side<br>
-	![elastic ip](readmePics/elastic ip.JPG)
+	1. Click on the 'Elastic IP' under 'Network & Security' tab on the left side
+	![elastic ip](readmePics/elastic-ip.JPG)
 	<br>
-	2.Now you have to choose the Elastic IP that you just created and click on the 'Action' mean which has an option called 'Associate Elastic IP Address' that we click on. <br>
-	![associate the elastic ip](readmePics/associate the elastic ip.JPG) <br>
-	3. Now we choose our instances that we want to bind to this Elastic IP Address and Click on Associate to complete.<br>
-	![last step in associated](readmePics/last step in associated.jpg)
+	2.Now you have to choose the Elastic IP that you just created and click on the 'Action' mean which has an option called 'Associate Elastic IP Address' that we click on.
+	![associate the elastic ip](readmePics/associate-the-elastic-ip.JPG) <br>
+	3. Now we choose our instances that we want to bind to this Elastic IP Address and Click on Associate to complete.
+	![last step in associated](readmePics/last-step-in-associated.jpg)
 	4. Now we should be able to access the app with the Elastic IP Address
 
 
