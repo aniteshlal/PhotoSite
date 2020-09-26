@@ -8,7 +8,7 @@
 3. [Things that are not working](#3-things-that-are-not-working)
 4. [YouTube walkthrough](#4-youtube-walkthrough)
 5. [Adv - What happens when an instance stops running?! What shall I do?](#5-adv---what-happens-when-an-instance-stops-running-what-shall-i-do)
-6. [Adv - How to get access to my website despite the IP address of EC2 changes?](#6-adv---how-to-get-access-to-my-website-despite-the-ip-address-of-ec2-changes)
+6. [Adv - What happens when you reboot an instance?? What can be done??](#6-adv---what-happens-when-you-reboot-an-instance-what-can-be-done)
 
 <br>
 
@@ -163,7 +163,17 @@ Once you login, you can see that your environment and files are still there so y
 You can run the Docker Container for the Photosite, without downloading and setting it up on the instances and access the app through the new instances' public IPv4 at port 3000<br>
 	
 
-## 6. Adv - How to get access to my website despite the IP address of EC2 changes?
+## 6. Adv - What happens when you reboot an instance?? What can be done??
+The IP address changes so we have to find the new public IPv4 to access our app. How to get access to my website despite the IP address of EC2 changes?<br>
+**Use [Elastic IP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)** <br>
+	1. Click on the 'Elastic IP' under 'Network & Security' tab on the left side<br>
+	(image elastic ip)
+	<br>
+	2.Now you have to choose the Elastic IP that you just created and click on the 'Action' mean which has an option called 'Associate Elastic IP Address' that we click on. <br>
+	(image of associated elastic) <br>
+	3. Now we choose our instances that we want to bind to this Elastic IP Address and Click on Associate to complete.<br>
+	(image of last pic)
+	4. Now we should be able to access the app with the Elastic IP Address
 
 
 [youtube link to create and configure EC2]: https://youtu.be/PBpXgQWBLyA
