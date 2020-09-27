@@ -143,7 +143,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 This section is very short because everything is working which is a good thing!!!
 
 ## 4. YouTube walkthrough
-[Link to my youtube tutorial](https://youtu.be/PBpXgQWBLyA)
+[Link to my youtube tutorial](https://youtu.be/gT-Uw3nV728)
 ## 5. Adv - What happens when an instance stops running?! What shall I do?
 When an instance stops, you lose your environment and data so you have to do all the steps to setup your instances again.<br>
 To prevent re-setup for our environment and data. We can create our own AMI.<br>
@@ -175,4 +175,4 @@ The IP address changes so we have to find the new public IPv4 to access our app.
 	4. Now we should be able to access the app with the Elastic IP Address
 
 
-[youtube link to create and configure EC2]: https://youtu.be/PBpXgQWBLyA
+[youtube link to create and configure EC2]: https://youtu.be/gT-Uw3nV728
