@@ -172,7 +172,10 @@ The IP address changes so we have to find the new public IPv4 to access our app.
 	![associate the elastic ip](readmePics/associate-the-elastic-ip.JPG) <br>
 	3. Now we choose our instances that we want to bind to this Elastic IP Address and Click on Associate to complete.
 	![last step in associated](readmePics/last-step-in-associated.JPG)
-	4. Now we should be able to access the app with the Elastic IP Address
+	4. Now we should be able to access the app with the Elastic IP Address ex. http://44.229.194.202:3000/ <br>
+	Find out about the [Elastic IP Pricing](https://aws.amazon.com/premiumsupport/knowledge-center/elastic-ip-charges/)
 
 
 [youtube link to create and configure EC2]: https://youtu.be/gT-Uw3nV728
+[my elastic ip]: http://44.229.194.202:3000/
+[elastic ip pricing]: https://aws.amazon.com/premiumsupport/knowledge-center/elastic-ip-charges/
