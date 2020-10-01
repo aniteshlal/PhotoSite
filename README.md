@@ -51,7 +51,7 @@ Here is the [link][youtube link to create and configure EC2] for my youtube vide
 
 2. Now build our image by doing the following command in our terminal<br>
 	```
-	docker build -t anitesh93/photosite-app .
+	docker build -t anitesh93/photosite-app -f DockerContainer/Dockerfile .
 	```
 	This creates a local docker image called "anitesh93/photosite-app"<br>
 
