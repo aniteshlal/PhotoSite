@@ -1,5 +1,5 @@
 # How to Dockerize and Deploying a Ruby on Rails Application that is a Simple Photosite
-
+Here is my link. http://ec2-44-229-194-202.us-west-2.compute.amazonaws.com:3000/
 ## Table of Contents
 1. [Intro and Purpose](#1-intro-and-purpose)
 	  - [How to create and Configure EC2 instance](#create-ec2)
